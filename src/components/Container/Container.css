@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px auto;
+}
+.container > .text {
+  flex-grow: 1;
+}
+.inner-div {
+  margin: 0 auto;
+  width: 410px;
+}
+.container > .text h1 {
+  font-size: 60px;
+}
+.container > .text p {
+  font-size: 15px;
+  line-height: 30px;
+  color: hsl(0, 0%, 41%);
+}
+@media (max-width: 767px) {
+  .inner-div {
+    text-align: center;
+    width: 100%;
+  }
+  .container > .text h1 {
+    font-size: 30px;
+  }
+}
+.mobile-img {
+  display: none;
+}
+@media (max-width: 767px) {
+  .mobile-img {
+    display: block;
+    flex-grow: 1;
+  }
+  .mobile-img img {
+    width: 100%;
+  }
+  .desktop-img {
+    display: none;
+  }
+}
+.container .desktop-img {
+  flex-grow: 1;
+}
+.container .desktop-img img {
+  width: 400px;
+  margin: 0 auto;
+}
+.learn-button {
+  padding: 10px 15px;
+  border-radius: 12px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  transition: 0.6s;
+  margin-top: 20px;
+}
+.learn-button:hover {
+  background-color: white;
+  color: black;
+}
+.logos {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .logos {
+    margin-top: 50px;
+  }
+}
+.logos img:not(:last-child) {
+  margin-right: 15px;
+  width: 70px;
+}
