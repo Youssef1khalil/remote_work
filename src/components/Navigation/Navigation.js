@@ -27,7 +27,6 @@ const Navigation = () => {
         };
       });
     }
-    // console.log(event.target.parentElement);
   }
   return (
     <ul className="nav-icons">
@@ -40,7 +39,7 @@ const Navigation = () => {
             className="dropDown-icon"
           />
         </a>
-        <FeatureMenu />
+        <FeatureMenu class={isClicked.clickedFeature ? "active-menu" : ""} />
       </li>
       <li className="contain-menu company-list" onClick={handleClick}>
         <a href="#company">
@@ -51,7 +50,7 @@ const Navigation = () => {
             className="dropDown-icon"
           />
         </a>
-        <CompanyMenu />
+        <CompanyMenu class={isClicked.clickedCompany ? "active-menu" : ""} />
       </li>
       <li>
         <a href="#career">Careers</a>

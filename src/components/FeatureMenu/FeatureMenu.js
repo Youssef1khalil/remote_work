@@ -4,9 +4,9 @@ import ReminderLogo from "../../images/icon-reminders.svg";
 import PlanningLogo from "../../images/icon-planning.svg";
 import "./FeatureMenu.css";
 
-const FeatureMenu = () => {
+const FeatureMenu = (props) => {
   return (
-    <ul className="feature-menu">
+    <ul className={`feature-menu ${props.class}`}>
       <li>
         <img src={TodoLogo} alt="" />
         To Do list

@@ -20,7 +20,7 @@
   display: block;
   color: hsl(0, 0%, 41%);
 }
-.nav-icons > li:hover a {
+.nav-icons > li:not(:first-child, :nth-child(2)):hover a {
   color: hsl(0, 0%, 8%);
 }
 .nav-icons > li .dropDown-icon {
@@ -30,17 +30,6 @@
 .nav-icons > li.contain-menu {
   position: relative;
 }
-
-.feature-list:hover .feature-menu {
-  opacity: 1;
-  z-index: 100;
-  background-color: white;
-}
 .company-menu > li:not(:last-child) {
   margin-bottom: 10px;
-}
-.company-list:hover .company-menu {
-  opacity: 1;
-  z-index: 100;
-  background-color: white;
 }
