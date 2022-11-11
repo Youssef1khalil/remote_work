@@ -11,26 +11,40 @@ const Navigation = () => {
     clickedFeature: false,
     clickedCompany: false,
   });
-  function handleClick(event) {
-    if (event.target.parentNode.classList.contains("feature-list")) {
-      setIsClicked((prevIsClicked) => {
-        return {
-          ...prevIsClicked,
-          clickedFeature: !prevIsClicked.clickedFeature,
-        };
-      });
-    } else if (event.target.parentNode.classList.contains("company-list")) {
-      setIsClicked((prevIsClicked) => {
-        return {
-          ...prevIsClicked,
-          clickedCompany: !prevIsClicked.clickedCompany,
-        };
-      });
-    }
-  }
+  // function handleClick(event) {
+  //   if (event.target.parentNode.classList.contains("feature-list")) {
+  //     setIsClicked((prevIsClicked) => {
+  //       return {
+  //         clickedFeature: !prevIsClicked.clickedFeature,
+  //         if(clickedCompany) {
+  //           clickedCompany = false;
+  //         },
+  //       };
+  //     });
+  //   } else if (event.target.parentNode.classList.contains("company-list")) {
+  //     setIsClicked((prevIsClicked) => {
+  //       return {
+  //         if(clickedFeature) {
+  //           clickedFeature = false;
+  //         },
+  //         clickedCompany: !prevIsClicked.clickedCompany,
+  //       };
+  //     });
+  //   }n
+  // }
   return (
     <ul className="nav-icons">
-      <li className="contain-menu feature-list" onClick={handleClick}>
+      <li
+        className="contain-menu feature-list"
+        onClick={() => {
+          setIsClicked((prevIsClicked) => {
+            return {
+              clickedFeature: !prevIsClicked.clickedFeature,
+              clickedCompany: false,
+            };
+          });
+        }}
+      >
         <a href="#features">
           Features
           <img
@@ -41,7 +55,17 @@ const Navigation = () => {
         </a>
         <FeatureMenu class={isClicked.clickedFeature ? "active-menu" : ""} />
       </li>
-      <li className="contain-menu company-list" onClick={handleClick}>
+      <li
+        className="contain-menu company-list"
+        onClick={() => {
+          setIsClicked((prevIsClicked) => {
+            return {
+              clickedFeature: false,
+              clickedCompany: !prevIsClicked.clickedCompany,
+            };
+          });
+        }}
+      >
         <a href="#company">
           Company
           <img

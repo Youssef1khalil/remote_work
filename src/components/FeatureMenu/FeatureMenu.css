@@ -9,10 +9,13 @@
   border-radius: 10px;
   left: -50px;
   transition: 0.6s;
+  pointer-events: none;
+  cursor: default;
   opacity: 0;
   color: hsl(0, 0%, 41%);
   background-color: white;
 }
+
 @media (max-width: 767px) {
   .feature-menu {
     position: relative;
@@ -23,9 +26,7 @@
     left: 0;
   }
 }
-.active-menu {
-  display: block;
-}
+
 .feature-menu > li {
   display: flex;
   align-items: center;
